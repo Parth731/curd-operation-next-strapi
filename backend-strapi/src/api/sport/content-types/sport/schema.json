@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sports",
+  "info": {
+    "singularName": "sport",
+    "pluralName": "sports",
+    "displayName": "sport",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "Date": {
+      "type": "datetime"
+    },
+    "detail": {
+      "type": "richtext"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "sports"
+    }
+  }
+}
